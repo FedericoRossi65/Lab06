@@ -28,18 +28,19 @@ class Controller:
         self._view.update()
 
     # Altre Funzioni Event Handler
-    # TODO
-    def mostro_automobili(self):
+
+    def mostro_automobili(self,e):
         auto = self._model.get_automobili()
-        self._view.lista_auto.controls.clear()
+        self._view.lista_auto.controls.clear() # ripulisco la lista
         for a in auto:
-            self._view.lista_auto.controls.append(ft.Text(f'{a}'))
+            self._view.lista_auto.controls.append(ft.Text(f'{a}')) # aggiorno la lista auto nella view con le auto
         self._view.update()
+
     def mostra_modelli(self,e):
 
-        self._view.lista_auto_ricerca.controls.clear()
-        modello = self._view.input_modello_auto.value.strip()
-        for a in self._model.cerca_automobili_per_modello(modello):
+        self._view.lista_auto_ricerca.controls.clear() # ripulisco la lista
+        modello = (self._view.input_modello_auto.value.strip())
+        for a in self._model.cerca_automobili_per_modello(modello): # nota bene : alla funzione cercaaoutopermodello devo passare un il parametro modello
             self._view.lista_auto_ricerca.controls.append(ft.Text(f'{a}'))
         self._view.update()
 

@@ -98,7 +98,7 @@ class View:
 
             ft.Row(spacing=50,controls=[ft.Text('Cerca Autobile')],alignment=ft.MainAxisAlignment.CENTER),
             ft.Row(spacing=5,controls=[self.input_modello_auto,pulsante_cerca],alignment=ft.MainAxisAlignment.START),
-            self.lista_auto_ricerca,
+            self.lista_auto_ricerca,# metta le auto trovate per modella nella pagina sotto la casella di testo
         )
 
     def cambia_tema(self, e):

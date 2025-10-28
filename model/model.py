@@ -38,7 +38,7 @@ class Autonoleggio:
         """
         cnx = get_connection()
         cursore = cnx.cursor()
-        query = """SELECT * FROM automobile"""
+        query = """SELECT * FROM automobile""" # query che interagisce con il database e prende tutte le automobili
         cursore.execute(query)
         lista_automobili = []
         for row in cursore:
@@ -62,7 +62,7 @@ class Autonoleggio:
         cnx = get_connection()
         cursore = cnx.cursor()
         query = f"""SELECT * FROM automobile
-                    WHERE modello = '{modello}' """
+                    WHERE modello = '{modello}' """ # query che estrapola dal database tutte le automobili con il modello inserito dall' utente
         cursore.execute(query)
         lista_auto_modelli = []
         for row in cursore:
