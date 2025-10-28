@@ -29,3 +29,13 @@ class Controller:
 
     # Altre Funzioni Event Handler
     # TODO
+    def mostro_automobili(self,e):
+        auto = self._model.get_automobili()
+        self._view.lista_auto.controls.clear()
+        for a in auto:
+            self._view.lista_auto.controls.append(ft.Text(f'{a}'))
+        self._view.update()
+
+
+
+

@@ -5,6 +5,7 @@ import pathlib
 
 def get_connection() -> mysql.connector.connection:
     try:
+
         cnx = mysql.connector.connect(
             option_files=f"{pathlib.Path(__file__).parent.resolve()}/connector.cnf"
         )

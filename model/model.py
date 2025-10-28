@@ -14,6 +14,7 @@ class Autonoleggio:
         self._nome = nome
         self._responsabile = responsabile
 
+
     @property
     def nome(self):
         return self._nome
@@ -35,6 +36,19 @@ class Autonoleggio:
             Funzione che legge tutte le automobili nel database
             :return: una lista con tutte le automobili presenti oppure None
         """
+        cnx = get_connection()
+        cursore = cnx.cursor()
+        query = """SELECT * FROM automobile"""
+        cursore.execute(query)
+        lista_automobili = []
+        for row in cursore:
+            aTemp = Automobile(row[0], row[1], row[2], row[3], row[4], row[5])
+            lista_automobili.append(aTemp)
+        cursore.close()
+        cnx.close()
+        return lista_automobili
+
+
 
         # TODO
 
