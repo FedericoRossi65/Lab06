@@ -63,9 +63,9 @@ class View:
         pulsante_conferma_responsabile = ft.ElevatedButton("Conferma", on_click=self.controller.conferma_responsabile)
 
         # Altri Pulsanti da implementare (es. "Mostra" e "Cerca")
-        # TODO
+
         pulsante_mostra = ft.ElevatedButton("Mostra",on_click= self.controller.mostro_automobili)
-        pulsante_cerca = ft.ElevatedButton("Cerca")
+        pulsante_cerca = ft.ElevatedButton("Cerca",on_click=self.controller.mostra_modelli)
 
 
         # --- LAYOUT ---
@@ -95,9 +95,10 @@ class View:
 
 
             # Sezione 4
-            # TODO
+
             ft.Row(spacing=50,controls=[ft.Text('Cerca Autobile')],alignment=ft.MainAxisAlignment.CENTER),
             ft.Row(spacing=5,controls=[self.input_modello_auto,pulsante_cerca],alignment=ft.MainAxisAlignment.START),
+            self.lista_auto_ricerca,
         )
 
     def cambia_tema(self, e):
