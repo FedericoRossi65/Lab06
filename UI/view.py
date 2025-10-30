@@ -85,11 +85,11 @@ class View:
             ft.Divider(),
 
             # Sezione 3
-
+            #creazione della riga con la voce automobili e il pulsante mostra
             ft.Row(spacing=5,
                    controls=[ft.Text('Autombili'),pulsante_mostra],
                    alignment=ft.MainAxisAlignment.START),
-            self.lista_auto,
+            self.lista_auto,#aggiunge sotto al pulsante e alla stringa la listView di auto
 
             ft.Divider(),
 
